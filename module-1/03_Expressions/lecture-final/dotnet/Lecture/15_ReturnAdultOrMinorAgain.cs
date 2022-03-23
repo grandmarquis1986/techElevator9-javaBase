@@ -10,12 +10,12 @@ namespace Lecture
     {
 
         /*
-        15. Now, do it again with a different bool opeation.
+        15. Now, do it again with a different bool operation.
         TOPIC: Logical Not
         */
         public string ReturnAdultOrMinorAgain(int number)
         {
-            if (true)
+            if (number<18==false)
             {
                 return "Adult";
             }

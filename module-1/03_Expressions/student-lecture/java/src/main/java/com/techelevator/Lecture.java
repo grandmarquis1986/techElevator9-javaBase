@@ -1,7 +1,6 @@
 package com.techelevator;
 
 public class Lecture {
-
     /*
     1. This method is named returnNotOne and it returns an int. Change
     it so that it returns something other than a 1.
@@ -138,7 +137,7 @@ public class Lecture {
     }
 
     /*
-    15. Now, do it again with a different boolean operation.
+    15. Now, do it again with a different boolean opeation.
     */
     public String returnAdultOrMinorAgain(int number) {
         if (true) {

@@ -15,8 +15,26 @@ namespace Lecture
             TOPIC: Complex Expression
         */
         public string ReturnBigEvenNumber(int number)
-        {            
-            return null;
+        {
+            string result = ""; 
+
+            bool isBig = number > 100;
+            bool isEven = number % 2 == 0;
+            bool isMultOfFive = number % 5 == 0; 
+
+            if (isBig)
+            {
+                if (isEven && isMultOfFive)
+                {
+                    result = "Big Even Number";
+                }
+                else
+                {
+                    result = "Big Number";
+                }
+            }
+            return result;
+
         }
         
 
