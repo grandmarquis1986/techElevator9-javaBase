@@ -305,7 +305,18 @@ public class Exercises {
 	 squirrelPlay(95, true) → true
 	 */
 	public boolean squirrelPlay(int temp, boolean isSummer) {
-		return false;
+
+		boolean playing = true;
+
+		if(temp >= 60 && temp <= 100) {
+			if (!isSummer && temp > 90) {
+				playing = false;
+			}
+		} else {
+			playing = false;
+		}
+
+		return playing;
 	}
 
     /*
@@ -329,7 +340,22 @@ public class Exercises {
      yourCakeAndEatItToo(11.00, false) → "special"
      */
     public String yourCakeAndEatItToo(double mealAmount, boolean isBirthday) {
-        return "";
+        double finalMealAmount = mealAmount;
+		double standard = 10.00;
+		double special = 15.00;
+		String dessert = "";
+
+		if(isBirthday) {
+			finalMealAmount = mealAmount + 5.00;
+		}
+		if(finalMealAmount > special) {
+			dessert = "ginormous";
+		} else if(finalMealAmount <= special && finalMealAmount > standard) {
+			dessert = "special";
+		} else {
+			dessert = "standard";
+		}
+		return dessert;
     }
 
 	/*
@@ -340,7 +366,11 @@ public class Exercises {
 	 sortaSum(10, 11) → 21
 	 */
 	public int sortaSum(int a, int b) {
-		return 0;
+		int sum = a + b;
+		if (sum >= 10 && sum <= 19) {
+			sum = 20;
+		}
+		return sum;
 	}
 
 	/*
