@@ -391,13 +391,13 @@ public class Exercises {
 			if ((day == 0 || day == 6)) {
 				return weekendAlarmVacation;
 			} else {
-				return weekdayAlarmVacation
+				return weekdayAlarmVacation;
 			}
 		} else {
 			if ((day == 0 || day == 6)) {
 				return weekendAlarmNonVacation;
 			} else {
-				return weekdayAlarmNonVacation
+				return weekdayAlarmNonVacation;
 			}
 		}
 	}
@@ -410,7 +410,19 @@ public class Exercises {
 	 in1To10(11, true) → true
 	 */
 	public boolean in1To10(int n, boolean outsideMode) {
-		return false;
+		if(outsideMode) {
+			if(n <= 1 || n >= 10) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			if (n >= 1 && n <=10) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	}
 
 	/*
@@ -422,6 +434,9 @@ public class Exercises {
 	 specialEleven(24) → false
 	 */
 	public boolean specialEleven(int n) {
+		if(n % 11 == 0 || ((n - 1) % 11 == 0)) {
+			return true;
+		}
 		return false;
 	}
 
@@ -433,7 +448,13 @@ public class Exercises {
 	 more20(22) → true
 	 */
 	public boolean more20(int n) {
-		return false;
+		if ((n - 1) % 20 == 0) {
+			return true;
+		} else if ((n - 2) % 20 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -444,7 +465,13 @@ public class Exercises {
 	 old35(15) → false
 	 */
 	public boolean old35(int n) {
-		return false;
+		if(n % 3 == 0 && n % 5 == 0) {
+			return false;
+		} else if (n % 3 == 0 || n % 5 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -456,7 +483,11 @@ public class Exercises {
 	 less20(20) → false
 	 */
 	public boolean less20(int n) {
-		return false;
+		if ((n + 1) % 20 == 0 || (n + 2) % 20 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/*
@@ -467,7 +498,14 @@ public class Exercises {
 	 nearTen(19) → true
 	 */
 	public boolean nearTen(int num) {
-		return false;
+		boolean isNearTen = false;
+		int[] variances = new int[] {-2, -1, 0, 1, 2};
+		for (int variance:variances) {
+			if((num + variance) % 10 == 0) {
+				isNearTen = true;
+			}
+		}
+		return isNearTen;
 	}
 
 	/*
@@ -478,7 +516,10 @@ public class Exercises {
 	 teenSum(13, 2) → 19
 	 */
 	public int teenSum(int a, int b) {
-		return 0;
+		if((a >= 13 && a <= 19) || (b >= 13 && b <= 19)) {
+			return 19;
+		}
+		return a + b;
 	}
 
 	/*
@@ -489,7 +530,13 @@ public class Exercises {
 	 answerCell(true, false, false) → false
 	 */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-		return false;
+		boolean willAnswer = true;
+		if(isAsleep) {
+			willAnswer = false;
+		} else if(isMorning && !isMom) {
+			willAnswer = false;
+		}
+		return willAnswer;
 	}
 
 	/*
@@ -502,7 +549,14 @@ public class Exercises {
 	 teaParty(20, 6) → 2
 	 */
 	public int teaParty(int tea, int candy) {
-		return 0;
+		int partyValue = 1;
+		if(tea * 2 <= candy || candy * 2 <= tea) {
+			partyValue = 2;
+		}
+		if(tea < 5 || candy <5) {
+			partyValue = 0;
+		}
+		return partyValue;
 	}
 
 	/*
@@ -512,7 +566,17 @@ public class Exercises {
 	 twoAsOne(3, 2, 2) → false
 	 */
 	public boolean twoAsOne(int a, int b, int c) {
-		return false;
+		boolean twoMakesThird = false;
+		if(a + b == c){
+			twoMakesThird = true;
+		}
+		if(a + c == b){
+			twoMakesThird = true;
+		}
+		if(b + c == a){
+			twoMakesThird = true;
+		}
+		return twoMakesThird;
 	}
 
 	/*
@@ -523,7 +587,17 @@ public class Exercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
-		return false;
+		boolean isInOrder = false;
+		if(bOk) {
+			if(b < c) {
+				isInOrder = true;
+			}
+		} else {
+			if(a < b && b < c) {
+				isInOrder = true;
+			}
+		}
+		return isInOrder;
 	}
 
 	/*
@@ -535,7 +609,19 @@ public class Exercises {
 	 inOrderEqual(5, 5, 7, true) → true
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
-		return false;
+		boolean increasing = false;
+		if(!equalOk) {
+			if (a < b && b < c) {
+				increasing = true;
+			}
+		} else {
+			if((a == b && b < c) || (a < b && b == c)) {
+				increasing = true;
+			} else if (a == b && b == c) {
+				increasing = true;
+			}
+		}
+		return increasing;
 	}
 
 	/*
