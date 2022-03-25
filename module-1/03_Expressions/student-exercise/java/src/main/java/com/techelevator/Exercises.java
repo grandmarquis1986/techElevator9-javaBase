@@ -383,7 +383,23 @@ public class Exercises {
 	 alarmClock(0, false) → "10:00"
 	 */
 	public String alarmClock(int day, boolean vacation) {
-		return "";
+		String weekdayAlarmNonVacation = "7:00";
+		String weekdayAlarmVacation = "10:00";
+		String weekendAlarmNonVacation = "10:00";
+		String weekendAlarmVacation = "off";
+		if(vacation) {
+			if ((day == 0 || day == 6)) {
+				return weekendAlarmVacation;
+			} else {
+				return weekdayAlarmVacation
+			}
+		} else {
+			if ((day == 0 || day == 6)) {
+				return weekendAlarmNonVacation;
+			} else {
+				return weekdayAlarmNonVacation
+			}
+		}
 	}
 
 	/*
